@@ -1,0 +1,24 @@
+[package]
+name = "brainfuck"
+version = "0.3.0"
+edition = "2024"
+
+
+[profile.release]
+lto = "thin"
+
+[target.'cfg(target_arch = "aarch64")'.dependencies]
+libc = "0.2.177"
+
+[dependencies]
+anyhow = "1.0.100"
+clap = { version = "4.5.50", features = ["derive"] }
+clap-repl = "0.3.2"
+dynasm = "4.0.1"
+dynasmrt = "4.0.1"
+env_logger = "0.11.8"
+log = "0.4.28"
+thiserror = "2.0.17"
+
+[dev-dependencies]
+ctor = "0.6.0"
